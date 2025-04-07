@@ -12,7 +12,7 @@ public static int roll(){
     while (score < 20 && tracker <= 4 ){
     int areavalid =0;
 do{
-    System.out.println("Which area do you want to go to?");
+    System.out.println("Which area do you want to go to?\n forest\n park\n beach\n mexico");
 
     if(kb.nextLine()=="forest"|| kb.nextLine()=="park"||kb.nextLine()=="beach"||kb.nextLine()=="mexico"){areavalid=1;}
 }
