@@ -10,6 +10,16 @@ public static int roll(){
     int tracker = 0;
 
     while (score < 20 && tracker <= 4 ){
+    int areavalid =0;
+do{
+    System.out.println("Which area do you want to go to?");
+
+    if(kb.nextLine()=="forest"|| kb.nextLine()=="park"||kb.nextLine()=="beach"||kb.nextLine()=="mexico"){areavalid=1;}
+}
+while(areavalid == 0);
+
+
+    
 rnum = (int)((Math.random() *101)% 4);
 
 switch (rnum) {
