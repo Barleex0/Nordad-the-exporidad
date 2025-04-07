@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Event {
 static int rnum;
 static Scanner kb = new Scanner(System.in);
+static String Awnser = "";
 
 //stores a random number
 public static int roll(){
@@ -10,11 +11,14 @@ public static int roll(){
     int tracker = 0;
 
     while (score < 20 && tracker <= 4 ){
-    int areavalid =0;
+    int areavalid = 0;
 do{
     System.out.println("Which area do you want to go to?\n forest\n park\n beach\n mexico");
 
-    if(kb.nextLine()=="forest"|| kb.nextLine()=="park"||kb.nextLine()=="beach"||kb.nextLine()=="mexico"){areavalid=1;}
+    Awnser=kb.nextLine();
+
+    if(Awnser.equals("forest")|| Awnser.equals("park")||Awnser.equals("beach")||Awnser.equals("mexico")){areavalid=1;}
+    else{System.out.println("that is not valid you wrote" + Awnser);};
 }
 while(areavalid == 0);
 
@@ -39,7 +43,9 @@ switch (rnum) {
         break;
     case 3:
         System.out.println("A BEAR>>>\n IT IS SO FAST\n QUICK 1 RUN" );
-        if(kb.nextLine()=="run" ||kb.nextLine()=="RUN"||kb.nextLine()=="i run"){
+
+         Awnser=kb.nextLine();
+        if(Awnser.equals("run") ||Awnser.equals("RUN")||Awnser.equals("i run")){
             System.out.println("you escape but you are pretty much useless for the rest of the day");
             return score;
         }
@@ -58,15 +64,17 @@ switch (rnum) {
         break;
 
     }
-System.out.println("wanna call it quits early?\n 1 for yes");
+System.out.println("wanna call it quits early?");
 
-if(kb.nextInt()==1){
-    kb.nextLine();
+Awnser = kb.nextLine();
+if(Awnser.equals("yes")||Awnser.equals("YES")||Awnser.equals("Y")){
+    
     tracker= 4;
-}
+};
+
 kb.nextLine();
     tracker++;
-}
+};
 
 return score;
 
